@@ -1,0 +1,6 @@
+#env setup
+# source this file
+
+PROJECT_ROOT=$(pwd)
+SRC_DIR=${PROJECT_ROOT}/src
+TARGET_DIR=${PROJECT_ROOT}/target

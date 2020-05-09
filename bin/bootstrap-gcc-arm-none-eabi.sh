@@ -10,15 +10,15 @@ DOWNLOAD_DIR=/vagrant
 INSTALL_ROOT_DIR=/usr/local/bin
 INSTALL_GCC_DIR=${INSTALL_ROOT_DIR}/gcc-arm-none-eabi-9-2019-q4-major
 
-ARTIFACT_FILE_NAME="gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2?revision=108bd959-44bd-4619-9c19-26187abf5225&la=en&hash=E788CE92E5DFD64B2A8C246BBA91A249CB8E2D2D"
-#ARTIFACT_FILE_NAME="gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2"
+#ARTIFACT_FILE_NAME="gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2?revision=108bd959-44bd-4619-9c19-26187abf5225&la=en&hash=E788CE92E5DFD64B2A8C246BBA91A249CB8E2D2D"
+ARTIFACT_FILE_NAME="gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2"
 MD5_HASH="fe0029de4f4ec43cf7008944e34ff8cc"
 
 DOWNLOAD_URL="https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/${ARTIFACT_FILE_NAME}"
 
 ARTIFACT_PATH=${DOWNLOAD_DIR}/${ARTIFACT_FILE_NAME}
 
-wget --tries=10 --directory-prefix=${DOWNLOAD_DIR} ${DOWNLOAD_URL}
+#wget --tries=10 --directory-prefix=${DOWNLOAD_DIR} ${DOWNLOAD_URL}
 ARTIFACT_HASH=$(md5sum ${ARTIFACT_PATH} | cut -d " " -f 1)
 
 if [ "${ARTIFACT_HASH}" != "${MD5_HASH}" ]; then
@@ -38,4 +38,4 @@ else
 	chmod +u ${PROFILE_SCRIPT}
 fi
 
-rm -rf ${DOWNLOAD_DIR}
+#rm -rf ${DOWNLOAD_DIR}
